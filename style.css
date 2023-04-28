@@ -1,22 +1,23 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    line-height: 1,5;
-    margin: 0;
     background:#333;
     text-align: center;
     color: white;
+    margin: 0;
 }
 #showcase .bg-image {
     position: absolute;
     background: #333 url(https://static.pexels.com/photos/248515/pexels-photo-248515.png);
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 450px;
     z-index: -1;
     opacity: 0.4;
+}
+#showcase {
+    min-height: 450px;
+    color: #fff; 
 }
 .content-wrap{
     width: 50%;
@@ -32,82 +33,80 @@ body{
     border: 1px solid #666;
     margin: 0.5em auto;
 }
-#showcase {
-    min-height: 450px;
-    color: #fff;
-    text-align: center;
-}
-header>h1,p{
-margin: 15px auto;
-}
 .btn:hover{
     background-color: lavender;
     color: black;
 }
+
 #section-a {
     background: #eaeaea;
     color: #333;
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-.flex{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 200px;
-    text-align: center;
+    padding-bottom: 3em;
+    padding-top: 1em;
+    min-width: 100%;
 }
 .content-wrapper{
-columns: 2 200px;
-max-width: 1200px;
-column-gap: 10%;
-margin: auto;
-margin-top: 0;
+    column-count: 2;
+    max-width: 60%;
+    column-gap: 5%;
+    margin: auto;
+    text-align: center;
 }
 .content-text{
-    width: 500px;
+    min-width:100%;
     margin: auto;
 }
-#section-b2{
+@media screen and (max-width:701px){
+  .content-wrapper{
+    column-count: 1;
+  }
+}
+#section-b{
     display: flex;
     justify-content: center;
     list-style: none; 
- 
 }
 img{
     max-width: 100%;
     height: 190px;
 }
 .card{
-    display: flex;
-    flex-direction: column;
     max-width: 270px;
-    min-height: 500px;
+    max-height: 600px;
     border: 1px solid black;
     background-color: #fff;
     color: black;
     margin: 20px 10px;
 }
-
 h3{
-    margin: 40px;
+    margin: 45px;
+    font-size: 20px; 
 }
 .card-content>p{
-    font-size: 18px;
+    display: inline-block;
+    text-align: center;
     max-width: 90%;
     min-height: 180px;
     margin-bottom: 40px;
-    line-height: 20px;
-    color: #6C6874;
+    margin-top: 0;
+    line-height: 25px;
+    color: #333;
 }
+@media screen and (max-width:701px){
+    #section-b{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+  }
 
 #section-c{
     background-color: #fff;
     color: black;
     min-width: 100%;
-    min-height: 300px;
+    min-height: 250px;
 }
-
 .content-title{
     font-size: 30px;
     margin-bottom: 50px;
@@ -115,13 +114,13 @@ h3{
 .content-wrap2{
     width: 50%;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 20px;
     color: #333;
 }
 
 #section-d{
     display: flex;
-    max-height: 350px;
+    max-height: 370px;
     min-width: 100%;
 }
 #section-d .box:first-child {
@@ -130,24 +129,39 @@ h3{
 .box{
     min-height: 320px;
     line-height: 30px;
+    width: 50%;
 }
 .content-title-d{
-    margin-top: 60px;
+    margin-top: 40px;
 }
 .box>p{
     display: inline-block;
     max-width: 80% ;
 }
+@media screen and (max-width:701px){
+    #section-d{
+      display: flex;
+      flex-direction: column;
+    }
+    .box{
+        min-width: 100%;
+        min-height: 400px;
+        padding: 15px;
+    }
+    #section-d .box:first-child {
+        width: 100%;
+    }
+  }
 footer{
     background-color: black;
     height:100px
 }
 #main-footer{
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-align-content: center;
-font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 20px;
 }
 a{
     color: #2690d4;
@@ -157,3 +171,12 @@ a{
     content: 'Project by ';
     color: #fff;
 }
+@media screen and (max-width:701px){
+    #main-footer{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: -450px;
+        min-width: 100%;
+    }
+  }
